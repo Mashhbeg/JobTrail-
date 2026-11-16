@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const loginUser = async (email, password) => {
   try {
-    const response = await axios.post(`${API_URL}/login`, {
+    const response = await axios.post(`${API_URL}/auth/login`, {
       email: email.trim().toLowerCase(),
       password,
     });
@@ -48,7 +48,7 @@ export const loginUser = async (email, password) => {
 
 export const registerUser = async ({ name, email, password }) => {
   try {
-    const response = await axios.post(`${API_URL}/register`, {
+    const response = await axios.post(`${API_URL}/auth/register`, {
       name: name.trim(),
       email: email.trim().toLowerCase(),
       password,
@@ -79,4 +79,3 @@ export const registerUser = async ({ name, email, password }) => {
     );
   }
 };
-
