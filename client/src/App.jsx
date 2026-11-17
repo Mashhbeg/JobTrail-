@@ -15,7 +15,7 @@ import Board from './Pages/Board';
 import Profile from './Pages/Profile';
 
 import Login from './Pages/login/Login';
-import Register from './pages/register/Register';
+import Register from './Pages/register/Register';
 
 const PlaceholderPage = ({ title }) => (
   <div className="bg-white p-8 rounded-xl border">
